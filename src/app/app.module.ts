@@ -21,9 +21,9 @@ import { FooterComponent } from './components/footer/footer.component';
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'home', component: CartComponent },
-  { path: 'home', component: ContactComponent },
-  { path: 'home', component: ContactComponent }
+  { path: 'cart', component: CartComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'checkout', component: CheckoutComponent }
 ];
 
 @NgModule({
