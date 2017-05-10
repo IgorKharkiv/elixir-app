@@ -16,6 +16,12 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SubscribeComponent } from './components/subscribe/subscribe.component';
+import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
+
+// import services
+import { CartService } from './services/cart.service';
+import { CartBadgeComponent } from './components/cart-badge/cart-badge.component';
 
 // array of routes
 const appRoutes: Routes = [
@@ -23,7 +29,8 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'cart', component: CartComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'checkout', component: CheckoutComponent }
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'comingsoon', component: ComingSoonComponent }
 ];
 
 @NgModule({
@@ -35,7 +42,10 @@ const appRoutes: Routes = [
     CartComponent,
     CheckoutComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    SubscribeComponent,
+    ComingSoonComponent,
+    CartBadgeComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +53,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ CartService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
