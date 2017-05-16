@@ -1,3 +1,4 @@
+<!-- Cart-Page-Content-Start -->
 <div class="cart-page-content page-section-padding">
   <div class="container">
     <div class="row">
@@ -18,65 +19,42 @@
               <th>Remove</th>
             </tr>
             </thead>
+
             <tbody>
-            <tr>
-              <td>1</td>
+
+            <!--REPEAT PRODUCTS-->
+            <tr *ngFor="let product of productsCart">
+              <td>{{ product.id }}</td>
+              <td><img [src]="product.image" /></td>
+              <td>{{ product.title }}</td>
               <td>
-                <a href="#"><img alt="" class="img-responsive" src="images/cartpage/cart-product-1.png"></a>
-              </td>
-              <td>
-                <h6><a href="#">Lorem ipsum dolor sit amet,</a></h6>
-              </td>
-              <td>
-                <form id="qua_in" action="action_page.php">
-                  <input type="number" value="1" name="quantity" min="1" max="5">
+                <form id="qua_in_2">
+                  <input type="number" value="1" name="quantity" min="1" max="10" [(ngModel)]="product.quantity">
+                  {{ product.quantity }}
                 </form>
               </td>
+              <td>$ {{ product.price }}</td>
+              <td>$ {{ product.total }}</td>
               <td>
-                <div class="cart-price">$104.99</div>
+                <i class="fa fa-trash" (click)="deleteProduct(product.id, $event)"></i>
               </td>
-              <td>
-                <div class="cart-subtotal">$104.99</div>
-              </td>
-              <td><i class="fa fa-trash"></i></td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>
-                <a href="#"><img alt="" class="img-responsive" src="images/cartpage/cart-product-2.png"></a>
-              </td>
-              <td>
-                <h6><a href="#">Lorem ipsum dolor sit amet,</a></h6>
-              </td>
-              <td>
-                <form id="qua_in_2" action="action_page.php">
-                  <input type="number" value="1" name="quantity" min="1" max="10">
-                </form>
-              </td>
-              <td>
-                <div class="cart-price">$85.99</div>
-              </td>
-              <td>
-                <div class="cart-subtotal">$85.99</div>
-              </td>
-              <td><i class="fa fa-trash"></i></td>
-            </tr>
+
+            <!--TOTAL-->
             <tr id="total_colspan">
               <td colspan="3" class="text-left">total</td>
-              <td>
-                2
-              </td>
-              <td>
-                190.98$
-              </td>
+              <td>2</td>
+              <td>190.98$</td>
               <td colspan="2">
                 <a class="checkPageBtn" href="#">add to wishlist</a>
               </td>
             </tr>
             </tbody>
           </table>
+          <button (click)="addProduct({id: number, name: string, quantity: number, price: number})">AddProduct</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+<!-- Cart-Page-Content-End -->

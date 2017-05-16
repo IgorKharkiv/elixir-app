@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../services/cart.service'
+import { CartService } from '../../services/cart.service';
+import { LocalStorageService } from '../../services/local-storage.service';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-cart-badge',
@@ -8,16 +10,15 @@ import { CartService } from '../../services/cart.service'
 })
 export class CartBadgeComponent implements OnInit {
 
-  products: any;
-  productCount : number;
+  productsCart: Product[] = [];
 
 
-  constructor() { }
+  constructor(private localStorageService: LocalStorageService, private cartService: CartService) { }
 
   ngOnInit() {
-
-
-
+    this.cartService.getProducts().subscribe(productsCart => {
+      this.productsCart = productsCart;
+    });
   }
 
 }

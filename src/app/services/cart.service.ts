@@ -1,44 +1,59 @@
 import { Injectable } from '@angular/core';
 import {Http, Response} from '@angular/http';
-import { LocalStorageService } from './local-storage.service'
-import 'rxjs/add/operator/toPromise';
+import { LocalStorageService } from './local-storage.service';
+import { Observable } from "rxjs/Observable";
+import { Subject } from 'rxjs/Subject';
+import "rxjs/add/observable/of";
 import 'rxjs/add/operator/map';
 
+import { Product } from '../models/product';
 
 @Injectable()
 export class CartService {
 
-  products : any[];
-  httpData: any;
-  data: {};
-  productList: any[];
+  private subject: Subject<Product[]> = new Subject<Product[]>();
+  private products: Product[];
 
-  constructor( public http:Http, private localStorageService : LocalStorageService ) {
-    this.products = [ 1 ];
+  constructor(private http: Http, private localStorageService: LocalStorageService) { }
 
-    this.httpData = new Promise(resolve => {
-      this.http.get('assets/data/products.json').map((res:Response) => res.json()).subscribe((data) => {
-        resolve( data );
+  getProducts(): Observable<Product[]> {
+
+    let cachedProducts = JSON.parse(localStorage.getItem('products'));
+
+    console.log(cachedProducts); 
+    if( cachedProducts ){
+      this.products = cachedProducts;
+      this.subject.next(this.products);
+    } else {
+      this.http.get("http://localhost:4200/assets/data/products.json").subscribe((response: Response) => {
+        this.products = response.json();
+        this.localStorageService.addItem('products', this.products);
+        this.subject.next(this.products);
+        console.log(this.products);
       });
-    }).then((data) => {
-      console.log("what is in the data ", data);
-      this.data = data;
-      this.productList = this.data['products'];
+    }
 
-      if( this.data && this.productList ){
-        this.localStorageService.addItem( 'cartProducts', JSON.stringify( this.productList ))
-      }
 
-    });
 
+    return this.subject.asObservable();
   }
 
-
-  getProducts(){
-
-    return this.localStorageService.getItem('cartProducts') || [];
-
+  deleteProduct(productId) {
+    this.products = this.products.filter(item => item.id != productId);
+    this.localStorageService.addItem('products', this.products);
+    this.subject.next(this.products);
   }
 
+  addProduct(product){
+    this.products.push(product);
+    this.subject.next(this.products);
+  }
+
+  /**
+   * Save products to LocaleStorage
+   */
+  private saveProductsLocalStorage() {
+    this.localStorageService.addItem('productsCart', this.products);
+  }
 
 }

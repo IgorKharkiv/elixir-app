@@ -1,53 +1,64 @@
-{
-  "products": [
+ [
     {
       "id": 1,
       "title": "Product 1",
-      "price": "100 500",
+      "price": 100500,
+      "quantity" : 1,
+      "image":"http://localhost:4200/assets/img/product/tre-shirt-1.png",
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
     },
 
     {
       "id": 2,
       "title": "Product 2",
-      "price": "11 500",
+      "quantity" : 2,
+      "price": 11500,
+      "image":"http://localhost:4200/assets/img/product/tre-shirt-2.png",
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
     },
 
     {
       "id": 3,
       "title": "Product 3",
-      "price": "91 300",
+      "price": 91300,
+      "quantity" : 4,
+      "image":"http://localhost:4200/assets/img/product/tre-shirt-3.png",
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
     },
 
     {
       "id": 4,
       "title": "Product 4",
-      "price": "100 500",
+      "price": 100500,
+      "quantity" : 1,
+      "image":"http://localhost:4200/assets/img/product/tre-shirt-1.png",
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
     },
 
     {
       "id": 5,
       "title": "Product 5",
-      "price": "1 530",
+      "price": 1530,
+      "quantity" : 1,
+      "image":"http://localhost:4200/assets/img/product/tre-shirt-2.png",
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
     },
 
     {
       "id": 6,
       "title": "Product 6",
-      "price": "8 520",
+      "price": 8520,
+      "quantity" : 1,
+      "image":"http://localhost:4200/assets/img/product/tre-shirt-1.png",
       "description" : "Lorem ipsum dolor sit amet. "
     },
 
     {
       "id": 7,
       "title": "Product 7",
-      "price": "100 500",
+      "price": 100500,
+      "quantity" : 1,
+      "image":"http://localhost:4200/assets/img/product/tre-shirt-3.png",
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
     }
   ]
-
-}
