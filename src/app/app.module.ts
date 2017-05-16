@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+// import google map component
+import { AgmCoreModule } from '@agm/core';
 
 // import route modules
 import { RouterModule, Routes } from '@angular/router';
@@ -21,7 +23,9 @@ import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 
 // import services
 import { CartService } from './services/cart.service';
+import { LocalStorageService } from './services/local-storage.service';
 import { CartBadgeComponent } from './components/cart-badge/cart-badge.component';
+
 
 // array of routes
 const appRoutes: Routes = [
@@ -51,9 +55,12 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDAH8jTkd6FDPK4IPnzR__4rpL19NIgm1c'
+    })
   ],
-  providers: [ CartService ],
+  providers: [ CartService, LocalStorageService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

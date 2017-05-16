@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Product 1",
+      "price": "100 500",
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+    },
+
+    {
+      "id": 2,
+      "title": "Product 2",
+      "price": "11 500",
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+    },
+
+    {
+      "id": 3,
+      "title": "Product 3",
+      "price": "91 300",
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+    },
+
+    {
+      "id": 4,
+      "title": "Product 4",
+      "price": "100 500",
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+    },
+
+    {
+      "id": 5,
+      "title": "Product 5",
+      "price": "1 530",
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+    },
+
+    {
+      "id": 6,
+      "title": "Product 6",
+      "price": "8 520",
+      "description" : "Lorem ipsum dolor sit amet. "
+    },
+
+    {
+      "id": 7,
+      "title": "Product 7",
+      "price": "100 500",
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+    }
+  ]
+
+}

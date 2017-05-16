@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  title: string = 'My first angular2-google-maps project';
+  lat: number = 51.678418;
+  lng: number = 7.809007;
+
   constructor() { }
 
   ngOnInit() {

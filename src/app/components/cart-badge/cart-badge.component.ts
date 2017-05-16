@@ -8,13 +8,15 @@ import { CartService } from '../../services/cart.service'
 })
 export class CartBadgeComponent implements OnInit {
 
+  products: any;
   productCount : number;
 
-  constructor( private _cartBageService : CartService ) { }
+
+  constructor() { }
 
   ngOnInit() {
 
-    this.productCount = this._cartBageService.getProducts();
+
 
   }
 
