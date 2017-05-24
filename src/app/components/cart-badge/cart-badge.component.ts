@@ -16,9 +16,13 @@ export class CartBadgeComponent implements OnInit {
   constructor(private localStorageService: LocalStorageService, private cartService: CartService) { }
 
   ngOnInit() {
-    this.cartService.getProducts().subscribe(productsCart => {
-      this.productsCart = productsCart;
-    });
+    setTimeout(() => {
+      this.cartService.getProducts().subscribe(productsCart => {
+        this.productsCart = productsCart;
+      });
+    }, 10);
+
+
   }
 
 }

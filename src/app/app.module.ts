@@ -25,6 +25,7 @@ import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 import { CartService } from './services/cart.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { CartBadgeComponent } from './components/cart-badge/cart-badge.component';
+import { MainSliderComponent } from './components/main-slider/main-slider.component';
 
 
 // array of routes
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
     FooterComponent,
     SubscribeComponent,
     ComingSoonComponent,
-    CartBadgeComponent
+    CartBadgeComponent,
+    MainSliderComponent
   ],
   imports: [
     BrowserModule,

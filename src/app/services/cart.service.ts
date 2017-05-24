@@ -20,18 +20,19 @@ export class CartService {
 
     let cachedProducts = JSON.parse(localStorage.getItem('products'));
 
-    console.log(cachedProducts); 
-    if( cachedProducts ){
-      this.products = cachedProducts;
-      this.subject.next(this.products);
-    } else {
+    // if( cachedProducts ){
+    //
+    //   this.products = cachedProducts;
+    //   this.subject.next(this.products);
+    //
+    // } else {
       this.http.get("http://localhost:4200/assets/data/products.json").subscribe((response: Response) => {
         this.products = response.json();
         this.localStorageService.addItem('products', this.products);
         this.subject.next(this.products);
         console.log(this.products);
       });
-    }
+    // }
 
 
 

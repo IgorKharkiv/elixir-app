@@ -1,0 +1,33 @@
+.b-slider{
+width: 100%;
+overflow: hidden;
+}
+.b-slider__container{
+  position: relative;
+  height: 30vh;
+}
+.b-slide__item{
+position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  color: #000;
+  background-color: #b9b9b9;
+  text-align: center;
+  justify-content: center;
+}
+.b-slider__controls{
+  color: #000;
+  font-size: 18px;
+}
+.b-slider__controls span{
+  cursor: pointer;
+  opacity: 0.8;
+}
+.friend{
+  background-color: #000;
+}
