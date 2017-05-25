@@ -1,4 +1,4 @@
-import { Component, OnInit, trigger, ChangeDetectorRef,  state, style, transition, animate, keyframes  } from '@angular/core';
+import { Component, OnInit, trigger, ChangeDetectorRef, style, transition, animate } from '@angular/core';
 
 
 interface Slide {
@@ -18,11 +18,7 @@ type Orientation = ( "prev" | "next" | "none" );
           transition(
               "void => prev", // ---> Entering --->
               [
-                // In order to maintain a zIndex of 2 throughout the ENTIRE
-                // animation (but not after the animation), we have to define it
-                // in both the initial and target styles. Unfortunately, this
-                // means that we ALSO have to define target values for the rest
-                // of the styles, which we wouldn't normally have to.
+
                 style({
                   left: -100,
                   opacity: 0.0,
@@ -53,11 +49,7 @@ type Orientation = ( "prev" | "next" | "none" );
           transition(
               "void => next", // <--- Entering <---
               [
-                // In order to maintain a zIndex of 2 throughout the ENTIRE
-                // animation (but not after the animation), we have to define it
-                // in both the initial and target styles. Unfortunately, this
-                // means that we ALSO have to define target values for the rest
-                // of the styles, which we wouldn't normally have to.
+
                 style({
                   left: 100,
                   opacity: 0.0,
@@ -104,7 +96,7 @@ export class MainSliderComponent implements OnInit {
     this.changeDetectorRef = changeDetectorRef;
     this.orientation = "none";
 
-    // Setup the friends collection.
+    // Setup the slides collection.
     this.slides = [
       {
         id: 1
@@ -120,8 +112,7 @@ export class MainSliderComponent implements OnInit {
       }
     ];
 
-    // Randomly(ish) select the initial friend to display.
-    this.selectedSlide = this.slides[ Math.floor( Math.random() * this.slides.length ) ];
+    this.selectedSlide = this.slides[ 0 ];
 
   }
 
@@ -131,8 +122,8 @@ export class MainSliderComponent implements OnInit {
   // ---
 
 
-  // I cycle to the next friend in the collection.
-  public showNextFriend() : void {
+  // I cycle to the next slide in the collection.
+  public showNextSlide() : void {
 
     // Change the "state" for our animation trigger.
     this.orientation = "next";
@@ -157,8 +148,8 @@ export class MainSliderComponent implements OnInit {
   }
 
 
-  // I cycle to the previous friend in the collection.
-  public showPrevFriend() : void {
+  // I cycle to the previous slide in the collection.
+  public showPrevSlide() : void {
 
     // Change the "state" for our animation trigger.
     this.orientation = "prev";
