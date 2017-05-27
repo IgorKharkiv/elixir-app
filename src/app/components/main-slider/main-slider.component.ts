@@ -86,14 +86,12 @@ export class MainSliderComponent implements OnInit {
   public orientation: Orientation;
   public selectedSlide: Slide;
 
-  private changeDetectorRef: ChangeDetectorRef;
   private slides: Slide[];
 
 
   // I initialize the component.
-  constructor( changeDetectorRef: ChangeDetectorRef ) {
+  constructor( ) {
 
-    this.changeDetectorRef = changeDetectorRef;
     this.orientation = "none";
 
     // Setup the slides collection.
@@ -128,12 +126,6 @@ export class MainSliderComponent implements OnInit {
     // Change the "state" for our animation trigger.
     this.orientation = "next";
 
-    // Force the Template to apply the new animation state before we actually
-    // change the rendered element view-model. If we don't force a change-detection,
-    // the new [@orientation] state won't be applied prior to the "leave" transition;
-    // which means that we won't be leaving from the "expected" state.
-    this.changeDetectorRef.detectChanges();
-
     // Find the currently selected index.
     let index = this.slides.indexOf( this.selectedSlide );
 
@@ -153,12 +145,6 @@ export class MainSliderComponent implements OnInit {
 
     // Change the "state" for our animation trigger.
     this.orientation = "prev";
-
-    // Force the Template to apply the new animation state before we actually
-    // change the rendered element view-model. If we don't force a change-detection,
-    // the new [@orientation] state won't be applied prior to the "leave" transition;
-    // which means that we won't be leaving from the "expected" state.
-    this.changeDetectorRef.detectChanges();
 
     // Find the currently selected index.
     let index = this.slides.indexOf( this.selectedSlide );

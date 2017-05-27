@@ -6,6 +6,10 @@
       <div [@slideAnimation]="orientation" class="b-slide__item">
         <span>{{ slide.id }}</span>
       </div>
+
+      <div class="b-slider__pagination">
+
+      </div>
     </template>
 
   </div>
@@ -13,10 +17,6 @@
   <div class="b-slider__controls">
     <span class="b-slider__prev" (click)="showPrevSlide()">Prev</span>
     <span class="b-slider__next" (click)="showNextSlide()">Next</span>
-  </div>
-
-  <div class="b-slider__pagination">
-
   </div>
 
 </div>
