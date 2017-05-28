@@ -23,6 +23,7 @@ import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 
 // import services
 import { CartService } from './services/cart.service';
+import { SliderProductsService } from './services/slider-products.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { CartBadgeComponent } from './components/cart-badge/cart-badge.component';
 import { MainSliderComponent } from './components/main-slider/main-slider.component';
@@ -62,7 +63,7 @@ const appRoutes: Routes = [
       apiKey: 'AIzaSyDAH8jTkd6FDPK4IPnzR__4rpL19NIgm1c'
     })
   ],
-  providers: [ CartService, LocalStorageService ],
+  providers: [ CartService, LocalStorageService, SliderProductsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

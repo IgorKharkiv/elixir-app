@@ -21,8 +21,6 @@ export class CartBadgeComponent implements OnInit {
         this.productsCart = productsCart;
       });
     }, 10);
-
-
   }
 
 }

@@ -1,4 +1,5 @@
 export class SliderProduct{
+  id:number;
   title: string;
   subtitle: string;
   material: string;
