@@ -1,13 +1,14 @@
 .b-slider{
-width: 100%;
-overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 .b-slider__container{
   position: relative;
-  height: 30vh;
+  height: 58vh;
 }
 .b-slide__item{
-position: absolute;
+  text-align: left;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -15,10 +16,11 @@ position: absolute;
   display: flex;
   align-items: center;
   font-size: 30px;
-  color: #000;
-  background-color: #b9b9b9;
-  text-align: center;
-  justify-content: center;
+  color: #ffffff;
+  background: radial-gradient(ellipse at center, rgb(195,195,195) 2%,rgb(119,119,119) 92%,rgb(115,115,115) 96%,rgb(115,115,115) 96%,rgb(115,115,115) 96%);
+}
+.b-slide__item.-style_2{
+  background: radial-gradient(ellipse at center, rgb(0,184,209) 2%,rgb(0,107,214) 92%,rgb(0,107,214) 98%);
 }
 .b-slider__controls{
   color: #000;
@@ -30,4 +32,69 @@ position: absolute;
 }
 .friend{
   background-color: #000;
+}
+.b-slider__title{
+  margin-bottom: 0;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 25px;
+}
+.b-slider__title span{
+  display: block;
+  font-size: 16px;
+  line-height: 1.1;
+  font-family: Roboto;
+  font-weight: 100;
+  text-transform: uppercase
+}
+.b-slideInform{
+  font-size: 15px;
+  font-weight: 100;
+}
+.b-slideInform__list{
+  list-style: none;
+}
+.b-slideInform__item{
+  margin-bottom: 6px;
+}
+.b-slide__description{
+  padding: 0 0 0 30px;
+}
+.b-slide__img{
+  perspective: 1000px;
+  height: 53vh;
+}
+.b-slide__img div{
+  height: 100%;
+}
+.b-slide__img img{
+  height: 100%;
+  width: auto;
+  display: block;
+}
+.b-slide__content{
+  flex-grow: 1;
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.b-slider__button{
+  cursor: pointer;
+  z-index: 200;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  margin-top: -25px;
+  width: 50px;
+  height: 50px;
+  background: url(assets/img/icons/right-ico.svg) center / contain no-repeat;
+}
+.b-slider__prev{
+  background: url(assets/img/icons/left-ico.svg) center / contain no-repeat;
+}
+.b-slider__next{
+  left: auto;
+  right: 30px;
 }

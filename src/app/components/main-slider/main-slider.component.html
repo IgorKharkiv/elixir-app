@@ -2,21 +2,54 @@
 
   <div class="b-slider__container">
 
-    <template ngFor let-slide [ngForOf]="[ selectedSlide ]">
-      <div [@slideAnimation]="orientation" class="b-slide__item">
-        <span>{{ slide.id }}</span>
+    <template ngFor let-slide [ngForOf]="[ selectedSlide ]" let i = index; >
+      
+      <div [@slideAnimation]="orientation" class="b-slide__item" [class.-style_2]="even">
+        
+        <div class="b-slide__content">
+
+          <div class="b-slide__description">
+
+            <h2 class="b-slider__title" [@description]="state">
+              {{ slide.title }}
+              {{ i }}
+              <span>{{ slide.subtitle }}</span>
+            </h2>
+            
+            <div class="b-slideInform" [@description]="state">
+              <ul class="b-slideInform__list">
+                <li class="b-slideInform__item">{{ slide.material }}</li>
+                <li class="b-slideInform__item">{{ slide.color }}</li>
+                <li class="b-slideInform__item">{{ slide.sleeves }}</li>
+                <li class="b-slideInform__item">{{ slide.fit }}</li>
+                <li class="b-slideInform__item">{{ slide.price }}</li>
+                <li class="b-slideInform__item">{{ slide.gsm }}</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="b-slide__img">
+            <div [@image]="state">
+              <img src="{{ slide.image }}" alt="">
+            </div>
+          </div>
+
+        </div>
       </div>
 
       <div class="b-slider__pagination">
 
       </div>
+
     </template>
+
+    <span class="b-slider__button b-slider__prev" (click)="showPrevSlide()"></span>
+      <span class="b-slider__button b-slider__next" (click)="showNextSlide()"></span>
 
   </div>
 
   <div class="b-slider__controls">
-    <span class="b-slider__prev" (click)="showPrevSlide()">Prev</span>
-    <span class="b-slider__next" (click)="showNextSlide()">Next</span>
+    
   </div>
 
 </div>
